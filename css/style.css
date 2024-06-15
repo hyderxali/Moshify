@@ -6,6 +6,7 @@
     --paragraph-color: #918ca4;
 }
 
+/* typography */
 html {
     font-size: 62.5%;
 }
@@ -56,5 +57,32 @@ p {
 
     h3 {
         font-size: 2.4rem;
+    }
+}
+
+/* links */
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.arrow-link {
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+.arrow-link::after {
+    content: '-->';
+    margin-left: 5px;
+    transition: all .15s;
+}
+
+.arrow-link:hover::after {
+    margin-left: 10px;
+}
+
+@media screen and (min-width:1024px) {
+    .arrow-link {
+        font-size: 1.5rem;
     }
 }
