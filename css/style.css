@@ -6,6 +6,12 @@
     --paragraph-color: #918ca4;
 }
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 /* typography */
 html {
     font-size: 62.5%;
@@ -174,4 +180,62 @@ a {
     height: 65px;
     justify-content: center;
     width: 65px;
+}
+
+/* buttons */
+.btn {
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 2rem 3rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.20s;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.btn--accent {
+    background-color: var(--accent-color);
+}
+
+.btn--accent:hover {
+    background-color: #ff4617;
+}
+
+.btn--secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn--secondary:hover {
+    background-color: #30e0ff;
+}
+
+.btn--heading {
+    background-color: var(--heading-color);
+}
+
+.btn--heading:hover {
+    background-color: #22125e;
+}
+
+.btn--block {
+    width: 100%;
+    display: inline-block;
+}
+
+.white {
+    color: white;
+}
+
+.color-heading {
+    color: var(--heading-color);
+}
+
+@media screen and (min-width:1024px) {
+    .btn {
+        font-size: 1.5rem;
+    }
 }
