@@ -221,6 +221,17 @@ a {
     background-color: #22125e;
 }
 
+.btn--outline {
+    background-color: white;
+    border: 2px solid var(--heading-color);
+    color: var(--heading-color);
+}
+
+.btn--outline:hover {
+    background-color: var(--heading-color);
+    color: white;
+}
+
 .btn--block {
     width: 100%;
     display: inline-block;
