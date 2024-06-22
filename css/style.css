@@ -625,36 +625,33 @@ a {
     height: 5rem;
 }
 
-.collapsible .icon {
+
+.collapsible__icon {
     width: 2rem;
     height: 2rem;
     transition: all 0.2s ease-in-out;
-}
-
-.collapsible__icon {
-    transform: rotate(0deg);
-}
-
-.collapsible--collapsed .collapsible__icon {
     transform: rotate(-90deg);
 }
 
-.collapsible--collapsed .collapsible__heading {
+.collapsible--expanded .collapsible__icon {
+    transform: rotate(0deg);
+}
+
+.collapsible--expanded .collapsible__heading {
     border-bottom: 3px solid var(--paragraph-color);
 }
 
-.collapsible--collapsed .collapsible__content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh;
+    transition: all 0.35s ease-in;
+    opacity: 1;
 }
 
 .collapsible__content {
-    opacity: 1;
-    max-height: 100vh;
-    overflow: auto;
-    transition: all 0.3s linear;
-
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-out;
 }
 
 /* blocks */
@@ -693,4 +690,90 @@ a {
 .container {
     margin: 0 auto;
     max-width: 1140px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+}
+
+.navbar--black {
+    background-color: black;
+}
+
+.nav__list {
+    width: 100%;
+    margin: 0;
+}
+
+.nav__item {
+    padding: 0.5rem 2rem;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.nav__item>a {
+    color: #ccc;
+    font-size: 2.5rem;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.nav__item>a:hover {
+    color: white;
+}
+
+.nav__toggler {
+    width: 4.7rem;
+    height: 4.7rem;
+    opacity: .5;
+    box-shadow: none;
+    border-radius: none;
+    transition: all 0.3s;
+}
+
+.navbar .icon-container {
+    background: transparent;
+}
+
+.navbar__brand {
+    transform: translateY(5px);
+}
+
+.collapsible--expanded .nav__toggler {
+    transition: all 0.3s;
+    height: 4.5rem;
+    width: 4.5rem;
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1024px) {
+
+    .nav__toggler {
+        display: none;
+    }
+
+    .nav__list {
+        width: auto;
+        display: flex;
+    }
+
+    .nav__item>a {
+        font-size: 1.6rem;
+    }
+
+    .navbar .collapsible__content {
+        max-height: 100vh;
+        opacity: 1;
+    }
+
+    .nav__item {
+        border: 0;
+    }
 }
