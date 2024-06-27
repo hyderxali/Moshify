@@ -5,6 +5,7 @@
     --heading-color: #1b0760;
     --paragraph-color: #918ca4;
     --border-color: #ccc;
+    --shadow-color: #e6ebee;
     --border-radius: 30px;
 }
 
@@ -93,7 +94,7 @@ a {
 }
 
 .arrow-link::after {
-    content: '';
+    content: '-->';
     margin-left: 5px;
     transition: all .15s;
 }
@@ -332,10 +333,14 @@ a {
 
 .card {
     border-radius: 10px;
-    box-shadow: 1px 1px 50px 1px grey;
+    box-shadow: 0 0 10px 5px #e6ebee;
     overflow: hidden;
+    transition: all .20s ease-out;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
 
 .card__header,
 .card__body {
@@ -397,7 +402,7 @@ a {
     display: inline-block;
     position: absolute;
     top: -7px;
-    right: 5%;
+    right: 2%;
 }
 
 @media screen and (min-width:1024px) {
@@ -505,7 +510,9 @@ a {
 /* testimonial */
 
 .testimonial {
-    box-shadow: 0px 0px 15px 4px var(--paragraph-color);
+    box-shadow: 0px 0px 15px 4px var(--shadow-color);
+    height: fit-content;
+    border-radius: var(--border-radius);
 }
 
 .testimonial__img>img {
@@ -523,6 +530,10 @@ a {
     position: absolute;
     top: 50px;
     right: 0;
+}
+
+.testimonial-block .block__header {
+    margin-bottom: 4rem;
 }
 
 .testimonial .quote {
@@ -684,9 +695,7 @@ a {
     clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
 }
 
-/* .block__header {
-    padding: 0 15rem;
-} */
+
 
 .block--dark {
     background-color: black;
@@ -704,6 +713,8 @@ a {
     margin: 0 auto;
     max-width: 1140px;
 }
+
+/* navbar */
 
 .navbar {
     display: flex;
@@ -754,6 +765,7 @@ a {
 
 .navbar__brand {
     transform: translateY(5px);
+    display: inline;
 }
 
 .collapsible--expanded .nav__toggler {
@@ -768,12 +780,13 @@ a {
 
 @media screen and (min-width:1024px) {
 
-    .nav__toggler {
+    .navbar .icon-container {
         display: none;
     }
 
     .nav__list {
         display: flex;
+        width: auto;
     }
 
     .nav__item>a {
@@ -881,5 +894,70 @@ a {
 @media screen and (max-width:320px) {
     .badge-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* feature section */
+.feature {
+    margin: 12rem 0;
+}
+
+.feature:first-of-type {
+    margin-top: 6rem;
+}
+
+.feature__img {
+    width: 100%;
+}
+
+.feature__heading {
+    margin: 1rem 0;
+}
+
+.feature.grid {
+    gap: 3rem 2rem;
+}
+
+.feature .icon {
+    width: 40px;
+}
+
+.feature .icon-container {
+    width: 60px;
+    height: 60px;
+}
+
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+
+    .feature.grid {
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    .feature:nth-of-type(even) .feature__content {
+        order: 2;
+    }
+}
+
+/* plans block */
+
+
+.block-plan .card {
+    max-width: 50rem;
+    margin: auto;
+}
+
+.block-plan {
+    gap: 3rem 4rem;
+}
+
+@media screen and (min-width:1024px) {
+    .plan--popular {
+        transform: scale(1.1);
     }
 }
