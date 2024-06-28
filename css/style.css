@@ -636,6 +636,11 @@ a {
 }
 
 /* collapsible */
+.collapsible {
+    /* margin: 1rem; */
+    padding: 2.5rem 0;
+    border-bottom: 2px solid #393939;
+}
 
 .collapsible__header {
     display: flex;
@@ -645,7 +650,7 @@ a {
 
 .collapsible__heading {
     font-size: 3rem;
-    margin-top: 0;
+    margin: 0;
     text-transform: uppercase;
 }
 
@@ -665,10 +670,6 @@ a {
 
 .collapsible--expanded .collapsible__icon {
     transform: rotate(0deg);
-}
-
-.collapsible--expanded .collapsible__heading {
-    border-bottom: 3px solid var(--paragraph-color);
 }
 
 .collapsible--expanded .collapsible__content {
@@ -1014,5 +1015,92 @@ a {
     .showcase__img {
         justify-self: right;
         width: auto;
+    }
+}
+
+/* footer block */
+
+.footer-block {
+    background-color: #232323;
+}
+
+.footer-block .collapsible__heading {
+    color: white;
+    font-weight: 600;
+}
+
+.footer-block .list {
+    color: white;
+    opacity: .5;
+}
+
+
+.footer__img-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer__img-container>img {
+    width: 100%;
+}
+
+.footer-block .footer__img-container .copyright {
+    color: white;
+    opacity: .5;
+}
+
+.footer-block .list__item {
+    font-weight: 400;
+}
+
+.footer-block .list__item {
+    margin: 1rem 0;
+}
+
+.footer-block .list__item>a {
+    color: white;
+    font-weight: 300;
+}
+
+@media screen and (min-width:768px) {
+
+    .footer-block .grid {
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        width: 100%;
+    }
+
+    .footer-block .collapsible {
+        border: 0;
+    }
+
+    .footer-block .footer__img-container .copyright {
+        font-size: 1.6rem;
+    }
+
+    .footer-block .collapsible__heading {
+        font-size: 1.6rem;
+    }
+
+    .footer-block .collapsible__content {
+        font-size: 1.5rem;
+    }
+
+    .footer__img-container {
+        order: -1;
+        margin-top: 0;
+        margin-right: 2rem;
+    }
+
+    .footer-block .icon-container {
+        display: none;
+    }
+
+    .footer-block .collapsible__content {
+        opacity: 1;
+        max-height: 100%;
+    }
+
+    .footer-block .collapsible {
+        padding: 0 2rem;
     }
 }
